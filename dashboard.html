@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crónicas de Nuestro Amor</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="envelope-wrapper" id="wrapper" onclick="abrirTodo()">
+        <div class="envelope" id="sobre">
+            <div class="flap"></div>
+            <div class="pocket"></div>
+
+            <div class="letter-scroll" id="carta">
+                <div class="letter-content">
+                    <h1 class="script-font">Nuestras Crónicas</h1>
+
+                    <div class="photo-container">
+                        <div class="victorian-frame">
+                            <img src="./img/ilysoo-record.jpg" alt="Recuerdo 1">
+                        </div>
+                        <div class="victorian-frame">
+                            <img src="./img/mi princesa.jpg" alt="Recuerdo 2">
+                        </div>
+                    </div>
+
+                    <hr class="divider">
+
+                    <div class="text-area">
+                        <p class="story-text">
+                            Desde que empezamos este viaje a distancia, cada momento
+                            ha sido un tesoro... (Tu historia aquí)
+                        </p>
+                        <h2 class="script-font">¿Quieres volver a empezar?</h2>
+
+                        <textarea id="respuesta" placeholder="Escribe tu respuesta aquí..."></textarea>
+
+                        <button class="btn-victorian" onclick="descargarRespuesta(event)">
+                            Enviar mi respuesta
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p id="hint" class="script-font">Toca para abrir mi mensaje...</p>
+    </div>
+    <script src="./js/script.js"></script>
+    </main>
+</body>
+
+</html>

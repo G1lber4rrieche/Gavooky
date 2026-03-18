@@ -1,0 +1,347 @@
+:root {
+    --bg-cold: #e6f0f3;
+    --accent-silver: #bcccdc;
+    --accent-lavender: #d8bfd8;
+    --text-gold-muted: #8e735b;
+    --glow-soft: rgba(173, 216, 230, 0.5);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100dvh;
+    /* Altura dinámica para móvil */
+    background: radial-gradient(circle at center, #ffffff 0%, #e6f0f3 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    overflow: hidden;
+}
+
+/* Efecto de luz ambiental en el fondo */
+.overlay-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(216, 191, 216, 0.1) 0%, rgba(173, 216, 230, 0.1) 100%);
+    pointer-events: none;
+}
+
+.login-container {
+    z-index: 10;
+    width: 90%;
+    max-width: 400px;
+}
+
+.victorian-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(5px);
+    padding: 40px 30px;
+    border: 2px solid var(--accent-silver);
+    border-radius: 15px;
+    box-shadow: 0 0 30px var(--glow-soft);
+    text-align: center;
+    position: relative;
+    /* Doble borde victoriano */
+    outline: 1px solid var(--accent-lavender);
+    outline-offset: -10px;
+}
+
+.main-title {
+    font-size: 2rem;
+    color: var(--text-gold-muted);
+    margin-bottom: 5px;
+}
+
+.dedication {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 1.5rem;
+    color: #a08c7d;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.label-text {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    background: rgba(230, 240, 243, 0.5);
+    border: 1px solid var(--accent-silver);
+    border-radius: 50px;
+    text-align: center;
+    font-family: inherit;
+    color: var(--text-gold-muted);
+    transition: 0.3s;
+}
+
+input[type="password"]:focus {
+    outline: none;
+    box-shadow: 0 0 10px var(--accent-lavender);
+    background: white;
+}
+
+.btn-victorian {
+    background: white;
+    border: 1.5px solid var(--accent-silver);
+    padding: 12px 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    color: var(--text-gold-muted);
+    letter-spacing: 2px;
+    transition: 0.4s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.btn-victorian:hover {
+    box-shadow: 0 0 20px var(--accent-lavender);
+    transform: translateY(-2px);
+    background: #fdfbfb;
+}
+
+.ornament-top,
+.ornament-bottom {
+    font-size: 1.5rem;
+    color: var(--accent-silver);
+    margin: 10px 0;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(230, 240, 243, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    width: 80%;
+    background: white;
+    padding: 40px;
+    border: 2px solid var(--accent-silver);
+    border-radius: 15px;
+    text-align: center;
+    max-width: 300px;
+    box-shadow: 0 0 30px var(--accent-lavender);
+    animation: fadeIn 0.5s ease;
+    border: solid;
+}
+
+.ornament {
+    font-size: 2rem;
+    color: var(--accent-lavender);
+    display: block;
+    margin: 10px 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Estilo de los marcos de fotos */
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.photo-frame {
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transform: rotate(-2deg);
+    /* Efecto de fotos sobre escritorio */
+    transition: 0.3s;
+}
+
+.photo-frame:nth-child(even) {
+    transform: rotate(3deg);
+}
+
+.inner-frame {
+    border: 8px double var(--accent-silver);
+    /* Esto emula el marco victoriano básico */
+    padding: 5px;
+    background: #fdfbfb;
+}
+
+.photo-frame img {
+    width: 250px;
+    height: auto;
+    display: block;
+}
+
+/* La Carta */
+.letter-paper {
+    background: #fffef5;
+    /* Color papel antiguo */
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 50px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eee;
+    position: relative;
+}
+
+.letter-text {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #5a5a5a;
+    text-align: justify;
+    font-style: italic;
+}
+
+/*/*/
+
+:root {
+    --ice-blue: #e6f0f3;
+    --lavender: #d8bfd8;
+    --silver: #bcccdc;
+    --paper: #fffef5;
+}
+
+body {
+    margin: 0;
+    background: var(--ice-blue);
+    font-family: 'Playfair Display', serif;
+    overflow: hidden;
+    /* Evita scroll antes de abrir */
+}
+
+.envelope-wrapper {
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1200px;
+    flex-direction: column;
+}
+
+.envelope {
+    position: relative;
+    width: 350px;
+    height: 150px;
+    background: white;
+    border: 1px solid var(--silver);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Solapa y Bolsillo */
+.flap {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--lavender);
+    z-index: 3;
+    clip-path: polygon(0 0, 50% 50%, 100% 0);
+    transform-origin: top;
+    transition: transform 0.6s ease;
+}
+
+.pocket {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #f9f9f9;
+    z-index: 4;
+    clip-path: polygon(0 0, 50% 50%, 100% 0, 100% 100%, 0 100%);
+    border: 1px solid #eee;
+}
+
+/* La Carta (Hoja con transición de salida) */
+.letter-scroll {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    background: var(--paper);
+    z-index: 2;
+    transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), height 1s ease;
+    overflow-y: hidden;
+    /* Oculto hasta que salga */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+/* --- ESTADO ABIERTO --- */
+.envelope.active .flap {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+.envelope.active .letter-scroll {
+    transform: translateY(-0px);
+    /* Sale del sobre */
+    height: 600px;
+    /* Se expande */
+    width: 380px;
+    left: -15px;
+    /* Crece un poco más que el sobre */
+    z-index: 5;
+    overflow-y: auto;
+    /* Permite leer todo */
+}
+
+/* Diseño de Galería dentro de la hoja */
+.photo-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+}
+
+.victorian-frame {
+    border: 5px double var(--silver);
+    padding: 5px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.victorian-frame img {
+    width: 100%;
+    display: block;
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid var(--lavender);
+    margin: 20px 0;
+}
+
+.script-font {
+    font-family: 'Pinyon Script', cursive;
+    text-align: center;
+}
