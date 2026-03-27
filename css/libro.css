@@ -139,12 +139,12 @@ p {
     .book {
         /* En móvil: Priorizamos el ancho (95% de la pantalla) */
         width: calc(48vw);
-        height: calc(52vw * 1.4);
+        height: calc(51vw * 1.4);
         /* Mantiene la proporción de libro */
     }
 
     p {
-        font-size: 6px;
+        font-size: 0.9rem;
         /* Texto un pelín más pequeño para que quepa todo */
     }
 
@@ -157,7 +157,7 @@ p {
 
     .front p,
     .back p {
-        font-size: 10px;
+        font-size: 6px;
     }
     
     .front img,
