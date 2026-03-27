@@ -5,7 +5,11 @@
 }
 
 body {
-    background-color: #76a8a4;
+    background-color: #7eb38d9d;
+    /* Esto añade un granulado muy fino como de papel antiguo */
+    background-image: url("https://www.transparenttextures.com/patterns/felt.png");
+    /* Mantiene el fondo fijo para que no se mueva al scrollear */
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,6 +136,47 @@ p {
     font-weight: bold;
     font-size: 1.5rem;
     color: var(--deep-green);
+}
+
+/* --- ESTILO DEL BOTÓN MINIMALISTA FIXED --- */
+.enlace-minimalista {
+    position: fixed; /* Fijo en la pantalla */
+    bottom: 30px; /* Separación del borde inferior */
+    left: 50%; /* Centrado horizontal */
+    transform: translateX(-50%); /* Ajuste perfecto del centro */
+    z-index: 9999; /* Por encima de todo */
+    
+    display: inline-block;
+    color: var(--deep-green); /* Usamos el verde del libro para el texto */
+    font-family: 'Georgia', serif;
+    font-size: 0.95rem; /* Un pelín más pequeño y discreto */
+    text-decoration: none;
+    font-weight: normal; /* Menos negrita */
+    
+    background-color: rgba(255, 255, 255, 0.85); /* Fondo blanco traslúcido */
+    padding: 12px 24px;
+    border-radius: 50px; /* Bordes totalmente redondeados */
+    border: 1px solid rgba(26, 60, 52, 0.2); /* Borde casi invisible */
+    
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Sombra MUY suave */
+    transition: all 0.4s ease;
+    animation: aparecerSutil 1s ease-out;
+}
+
+.enlace-minimalista:hover {
+    color: var(--deep-green);
+    background-color: #ffffff; /* Blanco total al pasar el mouse */
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12); /* Sombra un poco más fuerte */
+}
+
+/* Animación sutil de entrada */
+@keyframes aparecerSutil {
+    from { opacity: 0; transform: translate(-50%, 15px); }
+    to { opacity: 1; transform: translate(-50%, 0); }
+}
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* --- AJUSTE PARA TELÉFONOS --- */

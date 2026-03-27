@@ -63,6 +63,7 @@ function next() {
         if (currentLoc === numOfPapers) {
             // Si es la última página, esperamos un momento y reseteamos
             setTimeout(resetBook, 2000);
+            document.getElementById("boton-revelado").style.display = "block";
         }
         currentLoc++;
     }

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Animado</title>
     <link rel="stylesheet" href="./css/carta.css">
-    
+
 </head>
 
 <body>
@@ -28,16 +28,39 @@
             <!-- CARTA QUE SALDRÁ -->
             <div class="carta">
                 <div class="carta-interior">
-                    <h1>Mi querida corazon de melon</h1>
-                    <p>
-                        Mi niña preciosa, quiero decirte algo que tengo guardado desde lo mas profundo de mi corazón,
-                        te amo con todo mi ser, eres una chica increible, quiero que nuestros caminos se cruizen nuevamente y tomes mi mano,
-                        sigamos luchando juntos mi niña preciosa.
+                    <div
+                        style="text-align: right; font-style: italic; margin-bottom: 20px; font-size: 0.8rem; opacity: 0.8;">
+                        Chivacoa, 27 de Marzo de 2026
+                    </div>
+
+                    <h1
+                        style="font-family: 'Eagle Lake', serif; font-weight: normal; color: #1a3c34; font-size: 1.2rem; margin-bottom: 20px; border-bottom: 1px solid rgba(184, 134, 11, 0.3);">
+                        Mi querida corazón de melón,
+                    </h1>
+
+                    <p style="font-size: 0.95rem; margin-bottom: 15px;">
+                        Quiero decirte algo que tengo guardado desde lo más profundo de mi corazón:
+                        <strong>te amo con todo mi ser</strong>. Eres una chica increíble, llena de luz,
+                        y mi mayor deseo es que nuestros caminos se crucen nuevamente.
                     </p>
 
-                    <button class="btn-continuar" onclick="continuar(event)">
-                        Continuar
-                    </button>
+                    <p style="font-size: 0.95rem; margin-bottom: 15px;">
+                        Quisiera que tomes mi mano y que sigamos luchando juntos, como siempre debió ser.
+                        Tú para mí eres una princesa, pero yo no aspiro a ser un príncipe de cuento;
+                        <strong>quiero ser tu caballero inventor</strong>.
+                    </p>
+
+                    <p style="font-size: 0.95rem; margin-bottom: 15px;">
+                        He aprendido mucho en este tiempo, he crecido y me siento listo para protegerte,
+                        para cuidarte y para construir a tu lado. Esta es mi manera de preguntarte...
+                        <strong>¿me permites ser tu novio?</strong>
+                    </p>
+
+                    <div
+                        style="margin-top: 30px; text-align: center; font-style: italic; border-top: 1px solid rgba(184, 134, 11, 0.2); padding-top: 15px;">
+                        Estaré esperando tu respuesta, siempre.<br>
+                        <span style="font-size: 1.1rem; font-weight: bold; color: #1a3c34;">Tu Caballero.</span>
+                    </div>
                 </div>
             </div>
 
@@ -46,6 +69,11 @@
         <p class="hint">Toca para abrir mi mensaje...</p>
 
     </div>
+
+
+    <audio id="sonidoHoja1" src="./sonido/arrastrar papel.mp3" preload="auto"></audio>
+    <audio id="sonidoHoja2" src="./sonido/pagina2.mp3" preload="auto"></audio>
+    <audio id="resetLibro" src="./sonido/abrir sobre.mp3"></audio>
 
     <script src="./js/carta.js"></script>
 </body>

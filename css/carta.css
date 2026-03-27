@@ -4,7 +4,11 @@
 
 body {
     margin: 0;
-    background: #7f7486;
+    background-color: #7f7486;
+    /* Esto añade un granulado muy fino como de papel antiguo */
+    background-image: url("https://www.transparenttextures.com/patterns/felt.png");
+    /* Mantiene el fondo fijo para que no se mueva al scrollear */
+    background-attachment: fixed;
     font-family: "Playfair Display", serif;
     display: flex;
     justify-content: center;
@@ -134,6 +138,7 @@ body {
 ============================ */
 
 .carta {
+    /* Mantenemos tus dimensiones y animaciones intactas */
     opacity: 1;
     position: absolute;
     bottom: 0;
@@ -143,16 +148,29 @@ body {
     transition: height 1s ease, transform 1s ease;
     z-index: 1;
     width: 80vw;
-    /* 80% del ancho de la pantalla */
     max-width: 480px;
-    /* límite para que no sea gigante en PC */
     left: 50%;
     transform: translateX(-50%) translateY(0);
-    border: 2px solid rgba(71, 68, 67, 0.363);
-    color: #3021007e;
+    
+    /* MEJORA DE ESTILO */
+    border: 2px solid rgba(184, 134, 11, 0.4); /* Un toque dorado sutil en el borde */
+    color: #3e2b1daf; /* Un color café "tinta seca" más legible que el anterior */
     font-family: "Eagle Lake", serif;
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.05); /* Sombra interna para dar profundidad */
 }
 
+/* Para que el texto no pegue contra los bordes de la hoja */
+.carta-interior {
+    padding: 30px 25px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* Estilo para los resaltados en negrita */
+.carta strong {
+    color: #1a3c34; /* El verde profundo que venimos usando */
+    font-weight: bold;
+}
 .carta-interior {
     background: #fffef5;
     padding: 20px;
