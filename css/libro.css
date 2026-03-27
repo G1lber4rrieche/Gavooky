@@ -245,4 +245,7 @@ p {
         bottom: 60px;
     }
 
+    .cover h1{
+        font-size: 16px;
+    }
 }
