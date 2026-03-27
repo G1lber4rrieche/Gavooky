@@ -143,11 +143,6 @@ p {
         /* Mantiene la proporción de libro */
     }
 
-    p {
-        font-size: 0.9rem;
-        /* Texto un pelín más pequeño para que quepa todo */
-    }
-
     .front,
     .back {
         padding: 10px;
@@ -157,7 +152,7 @@ p {
 
     .front p,
     .back p {
-        font-size: 6px;
+        font-size: 5px !important;
     }
     
     .front img,
