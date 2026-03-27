@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Amuleto de Luz Eterna</title>
+    <style>
+        :root {
+            --paper: #f4ecd8;
+            --gold: #c5a059;
+            --deep-green: #1a3c34;
+            --magic-purple: #8e44ad;
+        }
+
+        body {
+            background-color: #121212;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Georgia', serif;
+            color: #333;
+            overflow: hidden;
+        }
+
+        /* --- CONTENEDOR DEL LIBRO --- */
+        .book {
+            width: 90%;
+            max-width: 450px;
+            height: 650px;
+            position: relative;
+            perspective: 2000px;
+        }
+
+        .page {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: var(--paper);
+            border: 5px double var(--gold);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            box-sizing: border-box;
+            display: none;
+            /* Se controlan con JS */
+            flex-direction: column;
+            overflow-y: auto;
+            border-radius: 5px;
+            animation: flipIn 0.6s ease-out;
+        }
+
+        .active {
+            display: flex;
+        }
+
+        /* --- ESTILOS DE CONTENIDO --- */
+        .illustration {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border: 2px solid var(--gold);
+            margin-bottom: 20px;
+            border-radius: 3px;
+        }
+
+        h2 {
+            color: var(--deep-green);
+            font-size: 1.4rem;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 1.05rem;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        .btn-next {
+            background: var(--deep-green);
+            color: white;
+            border: none;
+            padding: 12px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: auto;
+        }
+
+        .btn-next:hover {
+            background: #245a4d;
+        }
+
+        @keyframes flipIn {
+            from {
+                transform: rotateY(90deg);
+                opacity: 0;
+            }
+
+            to {
+                transform: rotateY(0deg);
+                opacity: 1;
+            }
+        }
+
+        /* --- DECORACIÓN --- */
+        .page-number {
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 10px;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="book">
+
+        <div class="page active" id="p0">
+            <div style="text-align: center; margin-top: 50px;">
+                <div style="font-size: 4rem;">💎</div>
+                <h1 style="color: var(--deep-green);">El Amuleto de <br>Luz Eterna</h1>
+                <p style="text-align: center; font-style: italic;">Una historia de amor y magia</p>
+                <div style="margin-top: 100px; color: var(--gold); font-weight: bold;">PARA DANE</div>
+            </div>
+            <button class="btn-next" onclick="showPage(1)">Abrir el libro</button>
+        </div>
+
+        <div class="page" id="p1">
+            <div class="illustration" style="background-image: url('https://i.imgur.com/rM6Y4y0.png');"></div>
+            <h2>I. El Reino en Guerra</h2>
+            <p>
+                Hace unos cuantos siglos, en un reino envuelto en misterio y maravillas, se alzaba un
+                majestuoso castillo. Allí vivía una joven princesa, hija de un poderoso rey. En tiempos más
+                pacíficos, el rey y la reina gobernaban en armonía, pero todo cambió cuando el Reino de los
+                Cielos inició un conflicto. La reina fue raptada por esos seres celestiales y desde entonces
+                permanecía como prisionera en el cielo, lo que sumió al reino en una guerra constante y
+                llenó al rey de temor.
+            </p>
+            <button class="btn-next" onclick="showPage(2)">Siguiente</button>
+            <div class="page-number">1</div>
+        </div>
+
+        <div class="page" id="p2">
+            <div class="illustration" style="background-image: url('https://i.imgur.com/W2O2O2v.png');"></div>
+            <h2>II. El Indulto</h2>
+            <p>
+                La princesa creció bajo esta sombra de conflicto, siempre curiosa por conocer el mundo
+                exterior, pero el rey, temiendo por su seguridad, le prohibía salir. Los seres del Reino de
+                los Cielos intentaban descender cada vez que ella se acercaba a los límites del castillo.
+                Aun así, existía una tradición: en el día de su cumpleaños, por respeto a la nobleza de su
+                sangre y al ser un día especial, los seres celestiales nunca atacaban. Ese día era el único
+                en que ella podía mirar más allá de los muros y sentir la libertad que anhelaba.
+            </p>
+            <button class="btn-next" onclick="showPage(3)">Siguiente</button>
+            <div class="page-number">2</div>
+        </div>
+
+        <div class="page" id="p3">
+            <h2>III. El Páramo</h2>
+            <p>
+                Así que, cada año en su cumpleaños, la princesa recibía ese pequeño indulto para salir. En
+                esta ocasión, decidió aventurarse hacia los páramos, un lugar frío y enigmático que siempre
+                despertaba su curiosidad. Por primera vez, las puertas del reino se abrieron para que ella
+                pudiera ver a los aldeanos, conocer a la gente del pueblo y observar la vida fuera de los
+                muros del castillo.
+            </p>
+            <button class="btn-next" onclick="showPage(4)">Siguiente</button>
+            <div class="page-number">3</div>
+        </div>
+
+        <div class="page" id="p4">
+            <h2>IV. El Joven Inventor</h2>
+            <p>
+                Mientras paseaba, sus ojos se posaron en un joven inventor de la aldea. Este chico tenía una
+                habilidad especial: podía convertir un simple trozo de madera en un arco y flecha o
+                desplegar ingeniosos inventos que eran raros en esa época. Uno de ellos era una pequeña
+                jaula encantada para alimentar a seres mágicos voladores, y aquello fascinó a la princesa.
+            </p>
+            <button class="btn-next" onclick="showPage(5)">Siguiente</button>
+            <div class="page-number">4</div>
+        </div>
+
+        <div class="page" id="p5">
+            <div class="illustration" style="background-image: url('https://i.imgur.com/8N6N6N6.png');"></div>
+            <h2>V. La Luz Verdosa</h2>
+            <p>
+                Decidido a impresionarla, el joven tomó una esfera de vidrio y usó la raíz de un árbol para
+                incrustarla, creando algo casi mágico. Se acercó y le dijo: «¿Quieres ver algo increíble?»
+                Cuando la princesa tocó el vidrio, este emitió una luz verdosa que hechizó el momento. Sin
+                embargo, el rey, al presenciar aquello, se llenó de miedo a la magia y ordenó aislarla de
+                inmediato. Los guardias capturaron a la princesa y trataron de someter al chico, que fue
+                golpeado y quedó malherido, aunque consiguió escapar.
+            </p>
+            <button class="btn-next" onclick="showPage(6)">Siguiente</button>
+            <div class="page-number">5</div>
+        </div>
+
+        <div class="page" id="p6">
+            <h2>VI. El Torneo</h2>
+            <p>
+                A lo largo de los años, la princesa creció rodeada de lujos, pero también de una soledad
+                silenciosa. Muchos reinos, buscando una alianza, enviaban pretendientes que competían en
+                torneos por su mano. Sin embargo, ella siempre se negaba a aceptar a cualquiera de ellos, ya
+                que en el fondo de su corazón mantenía la esperanza de volver a encontrarse con aquel joven
+                inventor. Ella soñaba con verlo aparecer en uno de esos concursos, aunque él nunca llegó a
+                presentarse. Así, en medio de la riqueza, ella seguía guardando la llama de ese anhelo: el
+                deseo de volver a conocerlo a él.
+            </p>
+            <button class="btn-next" onclick="showPage(7)">Siguiente</button>
+            <div class="page-number">6</div>
+        </div>
+
+        <div class="page" id="p7">
+            <h2>VII. Las Pruebas</h2>
+            <p>
+                Entonces, mientras la princesa sentía ese vacío de no poder ver a aquel chico, él no se
+                quedó de brazos cruzados. En secreto, el joven inventor fue perfeccionando su magia y sus
+                habilidades de combate para infiltrarse en el evento que seleccionaba a los guardias reales.
+                De los 500 participantes, primero tuvieron que reducirse a 150 en un enfrentamiento inicial.
+                Luego de eso, los 250 restantes fueron enviados a un bosque lleno de magia y peligros, y
+                aunque eran rescatados si algo salía mal, seguía siendo una prueba arriesgada. Finalmente,
+                quedaron 100 candidatos, pero había otro reto crucial: tenían que nadar bajo el agua, algo
+                que a él le daba pavor. A pesar de su miedo, lo superó con valentía y logró no solo
+                sobrevivir, sino destacar como uno de los mejores.</p>
+            <button class="btn-next" onclick="showPage(8)">Siguiente</button>
+            <div class="page-number">7</div>
+        </div>
+
+        <div class="page" id="p8">
+            <div class="illustration" style="background-image: url('https://i.imgur.com/L9L9L9L.png');"></div>
+            <h2>VIII. La Caída</h2>
+            <p>
+                Entonces, como reto final, los últimos participantes debían lanzarse desde la torre más alta
+                del castillo. La prueba era un verdadero test de resistencia, valentía y también de astucia,
+                ya que cada uno podía intentar elegir dónde aterrizar para amortiguar la caída. Algunos
+                cayeron en pasto y aunque quedaron inconscientes, sobrevivieron. Otros no tuvieron tanta
+                suerte y el golpe fue fatal.
+            </p>
+            <button class="btn-next" onclick="showPage(9)">Siguiente</button>
+            <div class="page-number">8</div>
+        </div>
+
+        <div class="page" id="p9">
+            <h2>IX. El Reencuentro</h2>
+            <p>
+                Nuestro joven inventor apuntó a una barandilla cubierta con una especie de carpa de
+                comerciantes que vendían frutas, confiando en que eso amortiguaría el impacto. Sin embargo,
+                en el último instante, chocó en el aire con otro participante y terminó cayendo entre rocas.
+            </p>
+            <button class="btn-next" onclick="showPage(10)">Siguiente</button>
+            <div class="page-number">9</div>
+        </div>
+
+        <div class="page" id="p10">
+            <h2>X. El Ataque</h2>
+            <p>
+                Y así, milagrosamente, el chico se pone de pie, levanta su casco y demuestra que sigue en la
+                contienda. De todos los que se lanzaron, él es el único que logra sobrevivir a una caída tan
+                dura y eso impresiona al rey, que lo nombra directamente como el guardia real de la
+                princesa.
+            </p>
+            <button class="btn-next" onclick="showPage(11)">Siguiente</button>
+            <div class="page-number">10</div>
+        </div>
+
+        <div class="page" id="p11">
+            <div class="illustration" style="background-image: url('https://i.imgur.com/V9V9V9V.png');"></div>
+            <h2>XI. El Milagro Morado</h2>
+            <p>
+                Así que, en ese momento decisivo, la princesa se acerca con la corona en mano. Es una corona
+                que, aunque no lo convierte en príncipe, simboliza el rango y el respeto que merece el
+                guardia real de la princesa. Al colocarle la corona, ella le reconoce públicamente ese
+                honor, y es en ese instante cuando él, aprovechando la cercanía, le entrega el amuleto verde
+                en secreto. Ese brillo reconocible hace que la princesa lo mire a los ojos y diga: "¿Tú eres
+                aquel joven inventor?"</p>
+            <button class="btn-next" onclick="showPage(12)">Siguiente</button>
+            <div class="page-number">11</div>
+        </div>
+
+        <div class="page" id="p12">
+            <div class="illustration" style="background-image: url('https://i.imgur.com/m9M9M9M.png');"></div>
+            <h2>Epílogo: Paz Eterna</h2>
+            <p>
+                Justo en ese momento, cuando él estaba a punto de abrir la boca para decirle algo
+                importante, un ataque sorpresivo del Reino de los Cielos interrumpe la ceremonia. Este no
+                era un simple evento de celebración, y los adversarios no iban a desaprovechar la
+                oportunidad.
+            </p>
+            <div style="text-align: center; color: var(--magic-purple); font-weight: bold; margin-top: 20px;">FIN</div>
+            <button class="btn-next" onclick="showPage(13)">Volver al inicio</button>
+            <div class="page-number">12</div>
+        </div>
+
+        <div class="page" id="p13">
+            <div class="illustration" style="background-image: url('https://i.imgur.com/m9M9M9M.png');"></div>
+            <h2>Epílogo: Paz Eterna</h2>
+            <p>
+                Sin haber podido darle un abrazo, sin haberle podido decir "te quiero," él se lanza
+                instintivamente para protegerla, no solo por deber, sino por el amor que siente por ella. Él
+                cae al suelo tras interponerse en el ataque y, con la voz entrecortada, le dice: "Todos
+                estos años estuve intentando acercarme a ti para poder darte el regalo que nunca me dejaron
+                entregarte."
+            </p>
+            <div style="text-align: center; color: var(--magic-purple); font-weight: bold; margin-top: 20px;">FIN</div>
+            <button class="btn-next" onclick="showPage(14)">Volver al inicio</button>
+            <div class="page-number">13</div>
+        </div>
+
+        <div class="page" id="p14">
+            <div class="illustration" style="background-image: url('https://i.imgur.com/m9M9M9M.png');"></div>
+            <h2>Epílogo: Paz Eterna</h2>
+            <p>
+                Sin haber podido darle un abrazo, sin haberle podido decir "te quiero," él se lanza
+                instintivamente para protegerla, no solo por deber, sino por el amor que siente por ella. Él
+                cae al suelo tras interponerse en el ataque y, con la voz entrecortada, le dice: "Todos
+                estos años estuve intentando acercarme a ti para poder darte el regalo que nunca me dejaron
+                entregarte."
+            </p>
+            <div style="text-align: center; color: var(--magic-purple); font-weight: bold; margin-top: 20px;">FIN</div>
+            <button class="btn-next" onclick="showPage(15)">Volver al inicio</button>
+            <div class="page-number">14</div>
+        </div>
+
+        <div class="page" id="p15">
+            <div class="illustration" style="background-image: url('https://i.imgur.com/m9M9M9M.png');"></div>
+            <h2>Epílogo: Paz Eterna</h2>
+            <p>
+                Sin haber podido darle un abrazo, sin haberle podido decir "te quiero," él se lanza
+                instintivamente para protegerla, no solo por deber, sino por el amor que siente por ella. Él
+                cae al suelo tras interponerse en el ataque y, con la voz entrecortada, le dice: "Todos
+                estos años estuve intentando acercarme a ti para poder darte el regalo que nunca me dejaron
+                entregarte."
+            </p>
+            <div style="text-align: center; color: var(--magic-purple); font-weight: bold; margin-top: 20px;">FIN</div>
+            <button class="btn-next" onclick="showPage(16)">Volver al inicio</button>
+            <div class="page-number">15</div>
+        </div>
+
+        <div class="page" id="p16">
+            <div class="illustration" style="background-image: url('https://i.imgur.com/m9M9M9M.png');"></div>
+            <h2>Epílogo: Paz Eterna</h2>
+            <p>
+                Sin haber podido darle un abrazo, sin haberle podido decir "te quiero," él se lanza
+                instintivamente para protegerla, no solo por deber, sino por el amor que siente por ella. Él
+                cae al suelo tras interponerse en el ataque y, con la voz entrecortada, le dice: "Todos
+                estos años estuve intentando acercarme a ti para poder darte el regalo que nunca me dejaron
+                entregarte."
+            </p>
+            <div style="text-align: center; color: var(--magic-purple); font-weight: bold; margin-top: 20px;">FIN</div>
+            <button class="btn-next" onclick="showPage(17)">Volver al inicio</button>
+            <div class="page-number">16</div>
+        </div>
+
+        <div class="page" id="p17">
+            <div class="illustration" style="background-image: url('https://i.imgur.com/m9M9M9M.png');"></div>
+            <h2>Epílogo: Paz Eterna</h2>
+            <p>
+                Sin haber podido darle un abrazo, sin haberle podido decir "te quiero," él se lanza
+                instintivamente para protegerla, no solo por deber, sino por el amor que siente por ella. Él
+                cae al suelo tras interponerse en el ataque y, con la voz entrecortada, le dice: "Todos
+                estos años estuve intentando acercarme a ti para poder darte el regalo que nunca me dejaron
+                entregarte."
+            </p>
+            <div style="text-align: center; color: var(--magic-purple); font-weight: bold; margin-top: 20px;">FIN</div>
+            <button class="btn-next" onclick="showPage(0)">Volver al inicio</button>
+            <div class="page-number">17</div>
+        </div>
+
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Ocultar todas las páginas
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            // Mostrar la elegida
+            document.getElementById('p' + pageId).classList.add('active');
+        }
+    </script>
+
+</body>
+
+</html>

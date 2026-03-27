@@ -1,0 +1,222 @@
+/* ============================
+   CONFIGURACIÓN GENERAL
+============================ */
+
+body {
+    margin: 0;
+    background: #7f7486;
+    font-family: "Playfair Display", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    overflow: hidden;
+}
+
+.contenedor-sobre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+}
+
+/* ============================
+   SOBRE RESPONSIVO
+============================ */
+
+.sobre {
+    width: min(90vw, 500px);
+    aspect-ratio: 5 / 2.5;
+    /* Más rectangular */
+    position: relative;
+    perspective: 1200px;
+}
+
+/* PARTE FRONTAL */
+.frente-sobre {
+    position: absolute;
+    inset: 0;
+    border-top: none;
+    border-radius: 2px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.frente-sobre::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    clip-path: polygon(0 0, 50% 50%, 100% 0, 100% 100%, 0 100%);
+    background-image: url("https://img.freepik.com/fotos-premium/antiguo-fondo-textura-papel-envejecido-vintage-grunge_271317-2058.jpg?semt=ais_hybrid&w=740&q=80");
+    background-size: cover;
+    /* se ajusta sin deformarse */
+    background-position: center;
+    /* centrada */
+    background-repeat: no-repeat;
+    /* no se repite */
+    z-index: 3;
+}
+
+.frente-sobre::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    clip-path: polygon(0 0, 50% 50%, 100% 0, 100% 100%, 0 100%);
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.062),
+        rgba(0,0,0,0)
+    );
+    top: -10px;
+    pointer-events: none;
+}
+
+
+.bolsillo {
+    width: min(90vw, 500px);
+    aspect-ratio: 5 / 2.5;
+    /* Más rectangular */
+    position: relative;
+    perspective: 1200px;
+    background: #dad8d4;
+    z-index: -2;
+}
+
+/* SELLO */
+.sello {
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    z-index: 5;
+    left: min(50% - 40px);
+    top: min(50% - 40px);
+    background-image: url('https://png.pngtree.com/png-vector/20241105/ourmid/pngtree-heart-wax-stamp-for-romantic-letters-png-image_14239248.png');
+    background-size: cover;
+}
+
+/* ESCRITURA */
+.escritura {
+    position: absolute;
+    bottom: 10px;
+    font-size: 18px;
+    color: #6b5b4d;
+    font-style: italic;
+}
+
+/* SOLAPA */
+.solapa {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50%;
+    background: #e8dfd0;
+    background-image: url("https://plus.unsplash.com/premium_photo-1675788301950-6ab70e71a207?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dGV4dHVyYSUyMGRlJTIwcGFwZWwlMjB2aWVqb3xlbnwwfHwwfHx8MA%3D%3D");
+    background-size: cover;
+    /* se ajusta sin deformarse */
+    background-position: center;
+    /* centrada */
+    background-repeat: no-repeat;
+    /* no se repite */
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+    transform-origin: top;
+    transition: transform 0.8s ease;
+    z-index: 3;
+}
+
+/* ============================
+   CARTA
+============================ */
+
+.carta {
+    opacity: 1;
+    position: absolute;
+    bottom: 0;
+    height: 0;
+    overflow: hidden;
+    background: transparent;
+    transition: height 1s ease, transform 1s ease;
+    z-index: 1;
+    width: 80vw;
+    /* 80% del ancho de la pantalla */
+    max-width: 480px;
+    /* límite para que no sea gigante en PC */
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+    border: 2px solid rgba(71, 68, 67, 0.363);
+    color: #3021007e;
+    font-family: "Eagle Lake", serif;
+}
+
+.carta-interior {
+    background: #fffef5;
+    padding: 20px;
+    height: 100%;
+    overflow-y: auto;
+    background-image: url("https://i.pinimg.com/736x/aa/c0/d3/aac0d3757d75d9e5d4ad7883445fc31a.jpg");
+    background-size: cover;
+    /* se ajusta sin deformarse */
+    background-position: center;
+    /* centrada */
+    background-repeat: no-repeat;
+    /* no se repite */
+    
+}
+
+.btn-continuar {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #8b6f4e;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.hint {
+    font-size: 20px;
+    opacity: 0.8;
+    transition: opacity 0.5s ease;
+}
+
+/* ============================
+   ESTADOS ACTIVOS
+============================ */
+
+.sobre.abierto .solapa {
+    transform: rotateX(180deg);
+}
+
+.sobre.abierto .solapa.activa {
+    z-index: 0;
+}
+
+/* La carta sale del sobre SOLO cuando se activa esta clase */
+.carta.saliendo {
+    height: 120%;
+    transform: translateX(-50%) translateY(-50%);
+    transition: height 1s ease, transform 1s ease;
+}
+
+
+.carta.expandida {
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+    height: 70vh;
+    max-width: 600px;
+    z-index: 999;
+    transition: all 0.8s ease;
+    box-shadow: 0 8px 20px rgba(31, 31, 31, 0.185);
+}
+
+.hint{
+    color: whitesmoke;
+}

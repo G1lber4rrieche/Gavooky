@@ -145,7 +145,7 @@ input[type="password"]:focus {
     max-width: 300px;
     box-shadow: 0 0 30px var(--accent-lavender);
     animation: fadeIn 0.5s ease;
-    border: solid;
+    /*border: solid;*/
 }
 
 .ornament {
@@ -294,6 +294,7 @@ body {
     overflow-y: hidden;
     /* Oculto hasta que salga */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    
 }
 
 /* --- ESTADO ABIERTO --- */
@@ -307,10 +308,10 @@ body {
     /* Sale del sobre */
     height: 600px;
     /* Se expande */
-    width: 380px;
-    left: -15px;
+    width: 300px;
     /* Crece un poco más que el sobre */
     z-index: 5;
+    left: 26px;
     overflow-y: auto;
     /* Permite leer todo */
 }

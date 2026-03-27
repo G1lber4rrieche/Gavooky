@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Animado</title>
+    <link rel="stylesheet" href="./css/carta.css">
+    
+</head>
+
+<body>
+
+    <div class="contenedor-sobre" onclick="abrirSobre()">
+
+        <!-- SOBRE COMPLETO -->
+        <div class="sobre">
+
+            <!-- PARTE FRONTAL DEL SOBRE -->
+            <div class="sello"></div>
+            <div class="frente-sobre">
+                <div class="escritura">Para ti, mi vida</div>
+            </div>
+            <div class="bolsillo"></div>
+            <!-- SOLAPA SUPERIOR -->
+            <div class="solapa"></div>
+
+            <!-- CARTA QUE SALDRÁ -->
+            <div class="carta">
+                <div class="carta-interior">
+                    <h1>Mi querida corazon de melon</h1>
+                    <p>
+                        Mi niña preciosa, quiero decirte algo que tengo guardado desde lo mas profundo de mi corazón,
+                        te amo con todo mi ser, eres una chica increible, quiero que nuestros caminos se cruizen nuevamente y tomes mi mano,
+                        sigamos luchando juntos mi niña preciosa.
+                    </p>
+
+                    <button class="btn-continuar" onclick="continuar(event)">
+                        Continuar
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <p class="hint">Toca para abrir mi mensaje...</p>
+
+    </div>
+
+    <script src="./js/carta.js"></script>
+</body>
+
+</html>
